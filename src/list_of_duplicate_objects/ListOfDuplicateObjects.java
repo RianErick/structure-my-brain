@@ -39,11 +39,11 @@ public class ListOfDuplicateObjects {
         }
 
 
-        public static ObjectOfFilter IndexAndObject(List<String> original , List<String> comparator){
+        public static ObjectOfFilter indexAndObject(List<String> original, List<String> comparator) {
             ObjectOfFilter objectOfFilter = new ObjectOfFilter();
             List<Integer> index = new ArrayList<>();
-            index = listIndex(original , comparator );
-            original = listEquals(original,comparator);
+            index = listIndex(original, comparator);
+            original = listEquals(original, comparator);
 
             objectOfFilter.setObjects(original);
             objectOfFilter.setIndex(index);
@@ -62,6 +62,7 @@ public class ListOfDuplicateObjects {
             return listIndexDuplicate.stream().toList();
         }
 
+
         public static void main(String[] args) {
 
             var listFull = ReturnList.listAll();
@@ -73,14 +74,8 @@ public class ListOfDuplicateObjects {
             var list = ListStringComparator.listIndex(names, comparator);
             var listAny = ListStringComparator.countListAny(names, comparator);
             var listEquals = ListStringComparator.listEquals(names, comparator);
+            var objFilter = ListStringComparator.indexAndObject(names, comparator);
 
-            var objFilter = ListStringComparator.IndexAndObject(names,comparator);
-
-            //System.out.println(count);
-           //System.out.println(list);
-             System.out.println(listAny);
-            //System.out.println(listEquals);
-            System.out.println(objFilter);
         }
     }
 }
